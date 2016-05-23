@@ -1,12 +1,16 @@
 # Wait For True
 
 ### Example
-docker run --rm theypsilon/waitfortrue:1.0.0 curl --head www.google.com
+```
+$ docker run --rm theypsilon/waitfortrue:1.0.0 curl --head www.google.com
+```
 WAITING FOR [curl --head www.google.com] during 100 seconds
 OK
 
 ##### Debug mode
-docker run --rm -e DEBUG=true theypsilon/waitfortrue:1.0.0 curl --head www.google.com                                                   
+```
+$ docker run --rm -e DEBUG=true theypsilon/waitfortrue:1.0.0 curl --head www.google.com
+```
 WAITING FOR [curl --head www.google.com] during 100 seconds
 DEBUG ON
 HTTP/1.1 200 OK
@@ -26,7 +30,9 @@ Vary: Accept-Encoding
 OK
 
 ##### Modifying timeout (default value is 100 seconds)
-docker run --rm -e TIMEOUT_SECONDS=5 theypsilon/waitfortrue:1.0.0 curl --head wrong.google.com
+```
+$ docker run --rm -e TIMEOUT_SECONDS=5 theypsilon/waitfortrue:1.0.0 curl --head wrong.google.com
+```
 WAITING FOR [curl --head wrong.google.com] during 5 seconds
 ..!!
 FAILED: timeout triggered after 5 seconds
