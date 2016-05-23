@@ -3,9 +3,10 @@
 ### Example
 ```
 $ docker run --rm theypsilon/waitfortrue:1.0.0 curl --head www.google.com
-```
+
 WAITING FOR [curl --head www.google.com] during 100 seconds
 OK
+```
 
 ##### Debug mode
 ```
