@@ -11,7 +11,7 @@ OK
 ##### Debug mode
 ```
 $ docker run --rm -e DEBUG=true theypsilon/waitfortrue:1.0.0 curl --head www.google.com
-```
+
 WAITING FOR [curl --head www.google.com] during 100 seconds
 DEBUG ON
 HTTP/1.1 200 OK
@@ -29,14 +29,17 @@ Accept-Ranges: none
 Vary: Accept-Encoding
 
 OK
+```
 
 ##### Modifying timeout (default value is 100 seconds)
 ```
 $ docker run --rm -e TIMEOUT_SECONDS=5 theypsilon/waitfortrue:1.0.0 curl --head wrong.google.com
-```
+
 WAITING FOR [curl --head wrong.google.com] during 5 seconds
 ..!!
 FAILED: timeout triggered after 5 seconds
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: wrong.google.com
+
+```
